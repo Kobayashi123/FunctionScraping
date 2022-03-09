@@ -6,7 +6,7 @@ use std::io::Write;
 
 fn main() {
     let mut file = File::create("RustBuiltInFunction.html").unwrap();
-    let str = String::from("temporary string");
+    let str = String::from("temporary-string");
 
     write!(file, "{}", str).unwrap();
     file.flush().unwrap();
