@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: builder
+    image: scraping-python
+    # env_file:
+    #   - .env
+    environment:
+      - TZ=Asia/Tokyo
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./src:/app/src
+      - ./output:/app/output
